@@ -7,10 +7,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
 import android.media.AudioManager;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.InputType;
@@ -288,49 +288,49 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.invertY:
-                gHandler.invertY();
-                toastMessage(getString(R.string.up_down_swap_OptionsMenu));
-                return true;
-            case R.id.invertX:
-                gHandler.invertX();
-                toastMessage(getString(R.string.left_right_swap_OptionsMenu_toast));
-                return true;
-            case R.id.loadProfile:
-                loadProfileDialog();
-                return true;
-            case R.id.saveProfile:
-                saveProfileDialog();
-                return true;
-            case R.id.axisSimulateToggle:
-                axisSimulatorShown = !axisSimulatorShown;
-                if (axisSimulatorShown) {
-                    showAxisEmulator();
-                    toastMessage(getString(R.string.simulate_Bow_Options_Menu_Toast));
-                    gHandler.startSound();
-                    gHandler.changeVol(preferredVolume);
-                } else {
-                    hideAxisEmulator();
-                    gHandler.stopSound();
-                }
-                return true;
-            case R.id.deleteProfile:
-                deleteProfileDialog();
-                return true;
-            case R.id.about:
-                showAboutDialog();
-                return true;
-            case R.id.recalibrate:
-                btHandler.recalibrate();  //toastMessage(getString(R.string.set_Middle_Options_Menu_Toast)); not used because btHandler toasts a succesfull message
-                return true;
-            case R.id.configureMicrochip:
+        int id = item.getItemId();
+        if (id == R.id.invertY) {
+            gHandler.invertY();
+            toastMessage(getString(R.string.up_down_swap_OptionsMenu));
+            return true;
+        } else if (id == R.id.invertX) {
+            gHandler.invertX();
+            toastMessage(getString(R.string.left_right_swap_OptionsMenu_toast));
+            return true;
+        } else if (id == R.id.loadProfile) {
+            loadProfileDialog();
+            return true;
+        } else if (id == R.id.saveProfile) {
+            saveProfileDialog();
+            return true;
+        } else if (id == R.id.axisSimulateToggle) {
+            axisSimulatorShown = !axisSimulatorShown;
+            if (axisSimulatorShown) {
+                showAxisEmulator();
+                toastMessage(getString(R.string.simulate_Bow_Options_Menu_Toast));
+                gHandler.startSound();
+                gHandler.changeVol(preferredVolume);
+            } else {
+                hideAxisEmulator();
                 gHandler.stopSound();
-                Intent intent = new Intent(this, ConfigurationActivity.class);
-                startActivity(intent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+            }
+            return true;
+        } else if (id == R.id.deleteProfile) {
+            deleteProfileDialog();
+            return true;
+        } else if (id == R.id.about) {
+            showAboutDialog();
+            return true;
+        } else if (id == R.id.recalibrate) {
+            btHandler.recalibrate();
+            return true;
+        } else if (id == R.id.configureMicrochip) {
+            gHandler.stopSound();
+            Intent intent = new Intent(this, ConfigurationActivity.class);
+            startActivity(intent);
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
     }
 
