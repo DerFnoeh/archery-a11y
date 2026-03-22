@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">BBBa</string>
+    <string name="about">   BBBa:
+Barrierefreie blindentaugliche Bogenschießanlage\n
+Konzept und Betreuung:\n
+       Artur Zrenner (Universität Paderborn)\n
+       Helmut Böhmer (Haxterpark Paderborn)\n
+       Programmierung:\n
+       Christopher Schrewing \n
+       Förderung:\n
+       Alfred Krupp von Bohlen und Halbach - Stiftung</string>
+    <string name="connect_bow_ButtonText">Bogen verbinden</string>
+    <string name="disconnect_Bow_Button">Verbindung trennen</string>
+    <string name="base_tonHeight_Seekbar">Basis-Tonhöhe</string>
+    <string name="y_achsis_Bow_Simulator">Y-Achse</string>
+    <string name="x_achsis_Bow_Simulator">X-Achse</string>
+    <string name="balance">Balance</string>
+    <string name="bullseye_mode_checkbox">Bullseye Modus</string>
+    <string name="profile_settings">Profileinstellungen</string>
+    <string name="bow_simulate_title">Bogen simulieren:</string>
+    <string name="trimmingbuttons_lable"><![CDATA[<p><b>Trimmung</b></p>Schuss war&#8230]]></string>
+    <string name="deepLeft_TrimmingButton">\nZu Tief\nZu Links</string>
+    <string name="rightUp_trimmingButton">Zu Rechts\nZu Hoch</string>
+    <string name="leftDeep_TrimmingButton">Zu Links\nZu Hoch</string>
+    <string name="up_down_swap_OptionsMenu">Oben und unten wurden vertauscht.</string>
+    <string name="left_right_swap_OptionsMenu_toast">Links und rechts wurden vertauscht.</string>
+    <string name="simulate_Bow_Options_Menu_Toast">Simuliert einen angeschlossenen Bogen. Position der Scheibe kann variiert werden.</string>
+    <string name="set_Middle_Options_Menu_Toast">Aktueller Punkt wurde als Mittelpunkt gesetzt.</string>
+    <string name="no_Data_receiving_toast">Der Bogen ist zurzeit nicht per Bluetooth verbunden</string>
+    <string name="bullseye_on_explanation_toast">Bullseye-Modus an. \n2 Arten von Ton:\nNur links/rechts (Wenn daneben)\nAuf beiden Ohren (Wenn in der Mitte)</string>
+    <string name="bullseye_off_explanation_toast">Bullseye-Modus aus. \nDer Stereo Ton wird kontinuierlich unbalancierter je weiter der Mittelpunkt entfernt ist.</string>
+    <string name="middle_size_bullseye_seekbar_lable">"Größe der Mitte:    "</string>
+    <string name="bullseye_size_explanation_toast">Anteil der x-Achse der als Mitte akzeptiert wird.</string>
+    <string name="choose_base_tone_explanation_toast">Wähle aus, was der tiefste Ton sein soll.</string>
+    <string name="balance_explanation_toast">Verschiebe den Punkt bis der Ton auf beiden Ohren gleich laut ist.</string>
+    <string name="paired_devices_dialog_header">Gepairte Geräte:</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="profile_load_error_toast">Profile können leider nicht abgerufen werden.</string>
+    <string name="new_profile_option_inDialog">-- Neues Profil --</string>
+    <string name="save_settings_as">Einstellungen speichern als:</string>
+    <string name="saved_settings_in_toast_1">Jetzige Einstellungen in \'</string>
+    <string name="saved_settings_in_toast_2">\' gespeichert.</string>
+    <string name="profile_name_createProfile_Dialog">Profilname:</string>
+    <string name="ok">OK</string>
+    <string name="profile_wasSaved_toast_1">Profil \'</string>
+    <string name="profile_wasSaved_toast2">\' wurde gespeichert.</string>
+    <string name="profile_allready_exists_toast_1">Ein Profil mit dem Namen \'</string>
+    <string name="profile_allready_exists_toast_2">\' ist bereits vorhanden. Dieses wurde nicht überschrieben!</string>
+    <string name="profileNotSaved_NoNameGiven_Toast">Profil wurde nicht gespeichert, da kein Name eingegeben wurde.</string>
+    <string name="profileNotSaved_toast">Profil wurde nicht gespeichert.</string>
+    <string name="profilesNotAvailable_toast">Profile können leider nicht abgerufen werden. Ein Neustart der App kann helfen.</string>
+    <string name="loadProfile_dialogTitle">Profil laden:</string>
+    <string name="settingsLoaded_toast_1">Einstellungen vom Profil \'</string>
+    <string name="settingsLoaded_toast_2">\' wurden übernommen.</string>
+    <string name="onlyDefaultProfile_toast">Keine selbst erstellten Profile gefunden.</string>
+    <string name="deleteProfile_dialogTitle">Profil löschen:</string>
+    <string name="profileDeleted_toast_1">Profil \'</string>
+    <string name="profileDeleted_toast_2">\' wurde gelöscht.</string>
+    <string name="noProfileErased_toast">Kein Profil wurde gelöscht</string>
+    <string name="about_dialogTitle">Über</string>
+    <string name="close_DialogButton">Schließen</string>
+    <string name="soundGen_halted_toast">Sound-Generator erfolgreich angehalten</string>
+    <string name="soundGenerator_allreadyStopped_toast">Sound Generator war bereits gestoppt</string>
+    <string name="showRawData_Button">Zeige Rohdaten</string>
+    <string name="highGain_button">High Gain</string>
+    <string name="lowGain_Button">Low Gain</string>
+    <string name="delay_Seekbar_lable">"Belichtungsdauer: "</string>
+    <string name="tryToConenct_toast">Versuche Verbindung zum Bogen herzustellen...</string>
+    <string name="connectionFailed_toast_1">Verbindungsversuch Nr.1 fehlgeschlagen.\nDer Versuch wird wiederholt, bitte warten.</string>
+    <string name="connectionFailed_toast_2">Verbindungsversuch Nr.2 fehlgeschlagen.\nDer Versuch wird wiederholt, bitte warten.</string>
+    <string name="connectionFailed_toast_3">Verbindungsversuch Nr.3 fehlgeschlagen.\nVerbingsaufbau wird abgebrochen. Bitte überprüfe ob das richtige Gerät gewählt wurde.</string>
+    <string name="pleasePair_aborted_toast">"Gewünschten Bogen nicht gefunden?\nPaire den Bogen in den Bluetooth-Einstellungen von Android."</string>
+    <string name="pleasePair_noDevice_toast">"Keine gepairten Geräte vorhanden.\nBitte paire den Bogen in den Bluetooth-Einstellungen von Android."</string>
+    <string name="connectionFailedGettingStreams_toast">"Connection failed getting input stream: "</string>
+    <string name="connectionEstablished_toast">Verbindung erfolgreich hergestellt.</string>
+    <string name="noBluetoothOnPhone_toast">Fatal Error! Bluetooth Not supported. Aborting.</string>
+    <string name="turnOnBT_toast">Bluetooth ist nicht angeschaltet.</string>
+    <string name="allreadyConnectingBT_toast">Bluetooth Verbindung besteht bereits oder wird noch aufgebaut</string>
+    <string name="connectionClosed_toast">Verbindung wurde erfolgreich geschlossen</string>
+    <string name="closingBTnotPossible_toast">"Fehler beim schließen der Verbindung: "</string>
+    <string name="noConnectionToClose_toast">Es besteht keine Verbindung die geschlossen werden kann</string>
+    <string name="trimmingFailed_noLight_toast">Es wird kein Punkt vom Bogen erkannt. Der Mittelpunkt bleibt unverändert.</string>
+</resources>

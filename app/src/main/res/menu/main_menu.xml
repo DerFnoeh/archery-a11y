@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/header_uni"
+        android:title="Universität Paderborn - Physik"
+        android:icon="@drawable/uni"
+        app:showAsAction="always|withText" />
+    <item
+        android:id="@+id/header_haxterpark"
+        android:title="Haxterpark Paderborn"
+        android:icon="@drawable/haxterpark"
+        app:showAsAction="always|withText" />
+    <item
+        android:id="@+id/header_krupp"
+        android:title="Alfred Krupp von Bohlen und Halbach - Stiftung"
+        android:icon="@drawable/krupp"
+        app:showAsAction="always|withText" />
+    <item
+        android:id="@+id/loadProfile"
+        android:title="Lade gespeichertes Profil"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/saveProfile"
+        android:title="Speichere dieses Profil"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/deleteProfile"
+        android:title="Lösche gespeichertes Profil"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/invertX"
+        android:title="Horizontal invertieren"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/invertY"
+        android:title="Vertikal invertieren"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/axisSimulateToggle"
+        android:title="Bogen simulieren an/aus"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/recalibrate"
+        android:title="Mittelpunkt setzen"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/configureMicrochip"
+        android:title="Controller konfigurieren"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/about"
+        android:title="Über"
+        app:showAsAction="never"/>
+</menu>
