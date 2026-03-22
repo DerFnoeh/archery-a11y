@@ -270,9 +270,16 @@ public class ConfigurationActivity extends AppCompatActivity implements Bluetoot
     public void toastMessage(final String message) {
         runOnUiThread(new Runnable() {
             public void run() {
-                if (lastToast != null) lastToast.cancel();
-                lastToast = Toast.makeText(currentContext, message, Toast.LENGTH_LONG);
-                lastToast.show();
+                if (message.contains("\n")) {
+                    new androidx.appcompat.app.AlertDialog.Builder(ConfigurationActivity.this)
+                            .setMessage(message)
+                            .setPositiveButton("OK", null)
+                            .show();
+                } else {
+                    if (lastToast != null) lastToast.cancel();
+                    lastToast = Toast.makeText(currentContext, message, Toast.LENGTH_LONG);
+                    lastToast.show();
+                }
             }
         });
     }

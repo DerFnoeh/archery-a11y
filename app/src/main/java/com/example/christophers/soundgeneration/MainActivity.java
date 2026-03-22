@@ -770,9 +770,17 @@ public class MainActivity extends AppCompatActivity {
     public void toastMessage(final String message) {
         runOnUiThread(new Runnable() {
             public void run() {
-                if (lastToast != null) lastToast.cancel();
-                lastToast = Toast.makeText(currentContext, message, Toast.LENGTH_LONG);
-                lastToast.show();
+                if (message.contains("\n")) {
+                    // Lange Nachrichten als Dialog anzeigen (Toast ist seit Android 12 auf 2 Zeilen begrenzt)
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setMessage(message)
+                            .setPositiveButton(R.string.ok, null)
+                            .show();
+                } else {
+                    if (lastToast != null) lastToast.cancel();
+                    lastToast = Toast.makeText(currentContext, message, Toast.LENGTH_LONG);
+                    lastToast.show();
+                }
             }
         });
     }
