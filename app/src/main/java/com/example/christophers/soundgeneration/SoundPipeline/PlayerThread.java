@@ -60,10 +60,19 @@ public class PlayerThread extends Thread {
         }
     }
 
+    private float lastAppliedLeft = -1f;
+    private float lastAppliedRight = -1f;
+
     void playSound() throws InterruptedException {
         audioTrack.write(audioOutput, 0, audioOutput.length);
         smoothVolChange();
-        audioTrack.setStereoVolume(leftVolume * leftChannelTrim, rightVolume * rightChannelTrim);
+        float newLeft = leftVolume * leftChannelTrim;
+        float newRight = rightVolume * rightChannelTrim;
+        if (newLeft != lastAppliedLeft || newRight != lastAppliedRight) {
+            audioTrack.setStereoVolume(newLeft, newRight);
+            lastAppliedLeft = newLeft;
+            lastAppliedRight = newRight;
+        }
     }
 
     float maxVolumeStep = 0.03f;

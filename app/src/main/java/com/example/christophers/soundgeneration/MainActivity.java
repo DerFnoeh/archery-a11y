@@ -7,6 +7,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
 import android.media.AudioManager;
+import android.os.Build;
+import android.Manifest;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -71,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar progressBarSignal;
 
     boolean axisSimulatorShown = false; //determines wether or not you see the sliders to simulate a connected bow
+
+    private static final int REQUEST_BLUETOOTH_PERMISSIONS = 1001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -464,7 +471,7 @@ public class MainActivity extends AppCompatActivity {
         bluetoothConnectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btHandler.connectAndRead();
+                connectBluetoothWithPermissionCheck();
             }
         });
 
@@ -477,6 +484,32 @@ public class MainActivity extends AppCompatActivity {
                 btHandler.closeBT(true);
             }
         });
+    }
+
+    private void connectBluetoothWithPermissionCheck() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            // Android 12+ requires runtime permissions for Bluetooth
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.BLUETOOTH_CONNECT, Manifest.permission.BLUETOOTH_SCAN},
+                    REQUEST_BLUETOOTH_PERMISSIONS);
+                return;
+            }
+        }
+        btHandler.connectAndRead();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_BLUETOOTH_PERMISSIONS) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                btHandler.connectAndRead();
+            } else {
+                toastMessage("Bluetooth-Berechtigung wird benötigt um den Bogen zu verbinden.");
+            }
+        }
     }
 
     public BluetoothDevice choice = null;
